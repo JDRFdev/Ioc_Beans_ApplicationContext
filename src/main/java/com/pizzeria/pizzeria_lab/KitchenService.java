@@ -2,13 +2,14 @@ package com.pizzeria.pizzeria_lab;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service
 public class KitchenService {
+
     private final Chef chef;
 
-    public KitchenService(Chef chef) {
+    public KitchenService( Chef chef) {
         this.chef = chef;
     }
     public void prepareOrder(){
@@ -16,12 +17,10 @@ public class KitchenService {
         this.chef.SayHello();
     }
 
-    @PostConstruct
     public void init(){
         System.out.println("The kitchen's ready!");
         prepareOrder();
     }
-    @PreDestroy
     public  void cleanup(){
         System.out.println("We are cleaning up the kitchen");
     }
