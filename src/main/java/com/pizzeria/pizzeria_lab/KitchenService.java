@@ -1,7 +1,9 @@
 package com.pizzeria.pizzeria_lab;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.scheduling.annotation.Async;
 
+@Async
 @ConfigurationProperties(prefix="pizzeria")
 public class KitchenService {
 
